@@ -1,0 +1,175 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 250, 250, 250;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+  transition: background-color 0.5s ease, color 0.5s ease;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Add smooth transitions for theme changes */
+* {
+  transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease, box-shadow 0.5s ease;
+}
+
+/* Ensure text in dark mode is white */
+.dark .ProseMirror {
+  color: white !important;
+}
+
+.dark .ProseMirror p {
+  color: white !important;
+}
+
+.dark .ProseMirror h1,
+.dark .ProseMirror h2,
+.dark .ProseMirror h3,
+.dark .ProseMirror h4,
+.dark .ProseMirror h5,
+.dark .ProseMirror h6 {
+  color: white !important;
+}
+
+.dark .ProseMirror li {
+  color: white !important;
+}
+
+.dark .ProseMirror blockquote {
+  color: white !important;
+}
+
+/* Ensure bold text remains white in dark mode */
+.dark .ProseMirror strong,
+.dark .ProseMirror b {
+  color: white !important;
+}
+
+/* Callout styles - these are now handled in globals.css */
+/* Removing duplicate styles to avoid conflicts */
+
+@layer components {
+
+  /* Editor styling */
+  .ProseMirror {
+    @apply min-h-[200px] outline-none;
+  }
+
+  .ProseMirror p {
+    @apply my-4;
+  }
+
+  .ProseMirror h1 {
+    @apply text-3xl font-bold mt-8 mb-4;
+  }
+
+  .ProseMirror h2 {
+    @apply text-2xl font-semibold mt-6 mb-4;
+  }
+
+  .ProseMirror ul {
+    @apply list-disc pl-5 my-4;
+  }
+
+  .ProseMirror ol {
+    @apply list-decimal pl-5 my-4;
+  }
+
+  .ProseMirror blockquote {
+    @apply border-l-4 border-gray-200 pl-4 italic my-6;
+  }
+}
+
+/* Callout styles */
+.callout {
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 0.5rem;
+  border-left-width: 4px;
+  border-left-style: solid;
+}
+
+.callout-info {
+  background-color: rgba(59, 130, 246, 0.1);
+  border-left-color: rgb(59, 130, 246);
+}
+
+.callout-warning {
+  background-color: rgba(245, 158, 11, 0.1);
+  border-left-color: rgb(245, 158, 11);
+}
+
+.callout-error {
+  background-color: rgba(239, 68, 68, 0.1);
+  border-left-color: rgb(239, 68, 68);
+}
+
+.callout-best-practice {
+  background-color: rgba(34, 197, 94, 0.1);
+  border-left-color: rgb(34, 197, 94);
+}
+
+/* Dark mode callout styles */
+.dark .callout-info {
+  /* Remove these styles to avoid conflicts with inline styles */
+  /* background-color: rgba(59, 130, 246, 0.2); */
+}
+
+.dark .callout-warning {
+  /* Remove these styles to avoid conflicts with inline styles */
+  /* background-color: rgba(245, 158, 11, 0.2); */
+}
+
+.dark .callout-error {
+  /* Remove these styles to avoid conflicts with inline styles */
+  /* background-color: rgba(239, 68, 68, 0.2); */
+}
+
+.dark .callout-best-practice {
+  /* Remove these styles to avoid conflicts with inline styles */
+  /* background-color: rgba(34, 197, 94, 0.2); */
+}
+
+/* AI Edit UI styles */
+.ai-edit-ui {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 400px;
+  z-index: 50;
+}
+
+/* Diff view styles */
+.diff-view {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Slash commands styles */
+.slash-commands {
+  position: absolute;
+  z-index: 50;
+}

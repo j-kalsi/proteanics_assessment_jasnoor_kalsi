@@ -1,0 +1,560 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --foreground-rgb: 0, 0, 0;
+    --background-start-rgb: 214, 219, 220;
+    --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --foreground-rgb: 255, 255, 255;
+        --background-start-rgb: 0, 0, 0;
+        --background-end-rgb: 0, 0, 0;
+    }
+}
+
+body {
+    color: rgb(var(--foreground-rgb));
+}
+
+/* Base callout styles */
+.callout,
+div.callout,
+.ProseMirror div.callout,
+[data-callout="true"] {
+    position: relative !important;
+    padding: 1rem !important;
+    margin: 1rem 0 !important;
+    border-radius: 0.5rem !important;
+    border-left: 6px solid #e5e7eb !important;
+    background-color: #f9fafb !important;
+    color: #374151 !important;
+}
+
+/* Info callout - Light mode */
+.callout.info,
+div.callout.info,
+.ProseMirror div.callout.info,
+.callout-info,
+div.callout-info,
+.ProseMirror div.callout-info,
+div[data-type="info"] {
+    background-color: #eff6ff !important;
+    border-left-color: #3b82f6 !important;
+    color: #1e40af !important;
+}
+
+/* Warning callout - Light mode */
+.callout.warning,
+div.callout.warning,
+.ProseMirror div.callout.warning,
+.callout-warning,
+div.callout-warning,
+.ProseMirror div.callout-warning,
+div[data-type="warning"] {
+    background-color: #fffbeb !important;
+    border-left-color: #f59e0b !important;
+    color: #92400e !important;
+}
+
+/* Error callout - Light mode */
+.callout.error,
+div.callout.error,
+.ProseMirror div.callout.error,
+.callout-error,
+div.callout-error,
+.ProseMirror div.callout-error,
+div[data-type="error"] {
+    background-color: #fef2f2 !important;
+    border-left-color: #ef4444 !important;
+    color: #b91c1c !important;
+}
+
+/* Best practice callout - Light mode */
+.callout.best-practice,
+div.callout.best-practice,
+.ProseMirror div.callout.best-practice,
+.callout-best-practice,
+div.callout-best-practice,
+.ProseMirror div.callout-best-practice,
+div[data-type="best-practice"] {
+    background-color: #ecfdf5 !important;
+    border-left-color: #10b981 !important;
+    color: #065f46 !important;
+}
+
+/* Dark mode styles */
+.dark .callout,
+.dark div.callout,
+.dark .ProseMirror div.callout,
+.dark [data-callout="true"] {
+    /* Remove these styles to avoid conflicts with inline styles */
+    /* background-color: #1f2937 !important; */
+    /* border-left-color: #374151 !important; */
+    /* color: #e5e7eb !important; */
+}
+
+/* Info callout - Dark mode */
+.dark .callout.info,
+.dark div.callout.info,
+.dark .ProseMirror div.callout.info,
+.dark .callout-info,
+.dark div.callout-info,
+.dark .ProseMirror div.callout-info,
+.dark div[data-type="info"] {
+    /* Remove these styles to avoid conflicts with inline styles */
+    /* background-color: rgba(59, 130, 246, 0.15) !important; */
+    /* border-left-color: #3b82f6 !important; */
+    /* color: #93c5fd !important; */
+}
+
+/* Warning callout - Dark mode */
+.dark .callout.warning,
+.dark div.callout.warning,
+.dark .ProseMirror div.callout.warning,
+.dark .callout-warning,
+.dark div.callout-warning,
+.dark .ProseMirror div.callout-warning,
+.dark div[data-type="warning"] {
+    /* Remove these styles to avoid conflicts with inline styles */
+    /* background-color: rgba(245, 158, 11, 0.15) !important; */
+    /* border-left-color: #f59e0b !important; */
+    /* color: #fcd34d !important; */
+}
+
+/* Error callout - Dark mode */
+.dark .callout.error,
+.dark div.callout.error,
+.dark .ProseMirror div.callout.error,
+.dark .callout-error,
+.dark div.callout-error,
+.dark .ProseMirror div.callout-error,
+.dark div[data-type="error"] {
+    /* Remove these styles to avoid conflicts with inline styles */
+    /* background-color: rgba(239, 68, 68, 0.15) !important; */
+    /* border-left-color: #ef4444 !important; */
+    /* color: #fca5a5 !important; */
+}
+
+/* Best practice callout - Dark mode */
+.dark .callout.best-practice,
+.dark div.callout.best-practice,
+.dark .ProseMirror div.callout.best-practice,
+.dark .callout-best-practice,
+.dark div.callout-best-practice,
+.dark .ProseMirror div.callout-best-practice,
+.dark div[data-type="best-practice"] {
+    /* Remove these styles to avoid conflicts with inline styles */
+    /* background-color: rgba(16, 185, 129, 0.15) !important; */
+    /* border-left-color: #10b981 !important; */
+    /* color: #6ee7b7 !important; */
+}
+
+/* Additional styles for content inside callouts */
+/* Apply to paragraph and heading text */
+.callout p,
+.callout h1,
+.callout h2,
+.callout h3,
+.callout h4,
+.callout h5,
+.callout h6 {
+    color: inherit !important;
+}
+
+/* Dark mode paragraph overrides */
+.dark .callout.info p,
+.dark .callout-info p,
+.dark div[data-type="info"] p {
+    color: #93c5fd !important;
+}
+
+.dark .callout.warning p,
+.dark .callout-warning p,
+.dark div[data-type="warning"] p {
+    color: #fcd34d !important;
+}
+
+.dark .callout.error p,
+.dark .callout-error p,
+.dark div[data-type="error"] p {
+    color: #fca5a5 !important;
+}
+
+.dark .callout.best-practice p,
+.dark .callout-best-practice p,
+.dark div[data-type="best-practice"] p {
+    color: #6ee7b7 !important;
+}
+
+/* AI Edit Styles */
+.ai-edit-ui {
+    position: fixed;
+    z-index: 50;
+    transition: all 0.2s ease-in-out;
+}
+
+.ai-edit-ui textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.ai-edit-ui button:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+/* Diff View Styles */
+.diff-view {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 50;
+    max-width: 90vw;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.ai-edit-addition {
+    background-color: rgba(0, 255, 0, 0.2);
+    text-decoration: underline;
+    text-decoration-color: green;
+    text-decoration-thickness: 2px;
+}
+
+.ai-edit-deletion {
+    background-color: rgba(255, 0, 0, 0.2);
+    text-decoration: line-through;
+    text-decoration-color: red;
+    text-decoration-thickness: 2px;
+}
+
+.ai-edit-processing {
+    opacity: 0.7;
+    cursor: wait;
+}
+
+/* Dark mode support */
+.dark .ai-edit-addition {
+    background-color: rgba(0, 255, 0, 0.1);
+    text-decoration-color: #4ade80;
+}
+
+.dark .ai-edit-deletion {
+    background-color: rgba(255, 0, 0, 0.1);
+    text-decoration-color: #f87171;
+}
+
+/* Existing styles */
+.prose {
+    max-width: none;
+}
+
+.prose img {
+    margin: 0 auto;
+}
+
+.prose pre {
+    background-color: #1e1e1e;
+    color: #d4d4d4;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    overflow-x: auto;
+}
+
+.prose code {
+    background-color: #f3f4f6;
+    color: #1f2937;
+    padding: 0.2em 0.4em;
+    border-radius: 0.25rem;
+    font-size: 0.875em;
+}
+
+.dark .prose code {
+    background-color: #374151;
+    color: #e5e7eb;
+}
+
+.prose pre code {
+    background-color: transparent;
+    color: inherit;
+    padding: 0;
+    border-radius: 0;
+}
+
+.prose blockquote {
+    border-left-color: #e5e7eb;
+    color: #6b7280;
+}
+
+.dark .prose blockquote {
+    border-left-color: #4b5563;
+    color: #9ca3af;
+}
+
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4,
+.prose h5,
+.prose h6 {
+    color: #111827;
+    font-weight: 600;
+    line-height: 1.25;
+}
+
+.dark .prose h1,
+.dark .prose h2,
+.dark .prose h3,
+.dark .prose h4,
+.dark .prose h5,
+.dark .prose h6 {
+    color: #f3f4f6;
+}
+
+.prose a {
+    color: #2563eb;
+    text-decoration: underline;
+    font-weight: 500;
+}
+
+.dark .prose a {
+    color: #60a5fa;
+}
+
+.prose strong {
+    color: #111827;
+    font-weight: 600;
+}
+
+.dark .prose strong {
+    color: #f3f4f6;
+}
+
+/* Ensure bold text remains white in dark mode */
+.dark .ProseMirror strong,
+.dark .ProseMirror b {
+    color: white !important;
+}
+
+.prose ol,
+.prose ul {
+    margin-top: 1.25em;
+    margin-bottom: 1.25em;
+    padding-left: 1.625em;
+}
+
+.prose li {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+.prose hr {
+    border-color: #e5e7eb;
+    margin-top: 3em;
+    margin-bottom: 3em;
+}
+
+.dark .prose hr {
+    border-color: #4b5563;
+}
+
+.prose table {
+    width: 100%;
+    table-layout: auto;
+    text-align: left;
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+.prose thead {
+    border-bottom-color: #e5e7eb;
+    font-weight: 600;
+}
+
+.dark .prose thead {
+    border-bottom-color: #4b5563;
+}
+
+.prose th {
+    font-weight: 600;
+    padding-bottom: 0.75em;
+    padding-left: 0.75em;
+    padding-right: 0.75em;
+    padding-top: 0.75em;
+}
+
+.prose tbody tr {
+    border-bottom-color: #e5e7eb;
+}
+
+.dark .prose tbody tr {
+    border-bottom-color: #4b5563;
+}
+
+.prose tbody td {
+    padding-top: 0.75em;
+    padding-right: 0.75em;
+    padding-bottom: 0.75em;
+    padding-left: 0.75em;
+}
+
+.prose figure {
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+.prose figure>* {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.prose figcaption {
+    color: #6b7280;
+    font-size: 0.875em;
+    line-height: 1.4285714;
+    margin-top: 0.8571429em;
+}
+
+.dark .prose figcaption {
+    color: #9ca3af;
+}
+
+.prose code {
+    color: #111827;
+    font-weight: 600;
+}
+
+.dark .prose code {
+    color: #f3f4f6;
+}
+
+.prose pre code {
+    color: inherit;
+    font-size: 0.875em;
+    font-weight: 400;
+}
+
+.prose kbd {
+    color: #111827;
+    font-weight: 600;
+    font-size: 0.875em;
+    background-color: #f3f4f6;
+    border-radius: 0.25rem;
+    padding: 0.125em 0.25em;
+}
+
+.dark .prose kbd {
+    color: #f3f4f6;
+    background-color: #374151;
+}
+
+.prose samp {
+    color: #111827;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-size: 0.875em;
+}
+
+.dark .prose samp {
+    color: #f3f4f6;
+}
+
+.prose abbr {
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    text-decoration-thickness: 1px;
+}
+
+.prose acronym {
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    text-decoration-thickness: 1px;
+}
+
+.prose thead th:first-child {
+    padding-left: 0;
+}
+
+.prose thead th:last-child {
+    padding-right: 0;
+}
+
+.prose tbody td:first-child {
+    padding-left: 0;
+}
+
+.prose tbody td:last-child {
+    padding-right: 0;
+}
+
+.prose> :first-child {
+    margin-top: 0;
+}
+
+.prose> :last-child {
+    margin-bottom: 0;
+}
+
+/* Callout styles */
+.callout {
+    position: relative;
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: 0.5rem;
+    border-left-width: 6px;
+    border-left-style: solid;
+}
+
+/* Light mode callout styles */
+.callout-info {
+    background-color: #eff6ff;
+    border-left-color: #3b82f6;
+    color: #1e40af;
+}
+
+.callout-warning {
+    background-color: #fffbeb;
+    border-left-color: #f59e0b;
+    color: #92400e;
+}
+
+.callout-error {
+    background-color: #fef2f2;
+    border-left-color: #ef4444;
+    color: #b91c1c;
+}
+
+.callout-best-practice {
+    background-color: #ecfdf5;
+    border-left-color: #10b981;
+    color: #065f46;
+}
+
+/* Dark mode callout styles */
+.dark .callout-info {
+    background-color: rgba(59, 130, 246, 0.15);
+    border-left-color: #3b82f6;
+    color: #93c5fd;
+}
+
+.dark .callout-warning {
+    background-color: rgba(245, 158, 11, 0.15);
+    border-left-color: #f59e0b;
+    color: #fbbf24;
+}
+
+.dark .callout-error {
+    background-color: rgba(239, 68, 68, 0.15);
+    border-left-color: #ef4444;
+    color: #fca5a5;
+}
+
+.dark .callout-best-practice {
+    background-color: rgba(16, 185, 129, 0.15);
+    border-left-color: #10b981;
+    color: #6ee7b7;
+}
