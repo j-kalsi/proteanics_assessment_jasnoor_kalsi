@@ -1,3 +1,4 @@
+#Link to demo video: https://drive.google.com/file/d/1FOuIVU1hzo0pmzlMNLorO_zwwRUO-z5C/view?usp=sharing
 # AI-Enabled Inline Edits - Design Document
 
 ## 1. Executive Summary
